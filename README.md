@@ -28,104 +28,11 @@ Another button allows you to repost your photos and videos on your social media 
 
 If you're ready to turn your travel shooting memories into an adventure of a lifetime, take a SnapTrail today and explore the world like never before. Embark on an unforgettable journey, one snapshot at a time!
 
-## Get started video
-
-- https://www.youtube.com/watch?v=MDcyG9MAMAo
-
-- https://developers.google.com/ar/geospatialcreator/unity/quickstart
-
-- ARCore Extensions: https://developers.google.com/ar/develop/unity-arf/getting-started-extensions
-
-- com.cesium.unity-1.6.4.tgz: https://github.com/CesiumGS/cesium-unity/releases/
-
-## Install AR Foundation
-
-- AR Foundation 4.2.9 (from Package Manager)
-
-- Google ARCore XR plugin (from Package Manager)
-
-- Edit > Project Settings. In XR Plug-in Management, open the Android tab and enable ARCore.
-
-## Android Setup
-
-- Switch to Android
-
-- Player Settings - Other Settings:
-
-    - Uncheck Auto Graphics API.
-
-    - Graphics API > Disable / Remove Vulkan
-
-    - Android 7.0 'Nougat' (API Level 24) or higher
-
-    - Scripting Backend = IL2CPP
-
-    - ARM64 Only (Enable both 32-bit (ARMv7) and 64-bit (ARM64) to meet Play Store 64-bit requirements)
-
-    - Write Permission: "External (SDCard)"
-
-- Gradle: installed with Unity
-
-## APIs Enabled in Google Cloud Console
-
-- ARCore API
-- Map Tiles API
-
-## ARCore Extensions package
-
-Add package from git URL...  https://github.com/google-ar/arcore-unity-extensions.git
-
-Package Manager - ARCore Extensions package - Samples: Import Geospatial (Android only)
-
-Project Settings... > XR Plug-in Management - ARCore Extensions panel. Ensure "Geospatial" is checked (you don't need to enable the Geospatial Creator just yet)
-
-Project Settings... > XR Plug-in Management - ARCore Extensions - Android Authentication Strategy : API Key. Set your ARCore Android API key
-AIzaSyDDmFegJAHDL4SbFZZBq_sCTa13WZ3V4UM
-
-Assets/Samples/ARCore Extensions/1.40.0/Geospatial Sample/Configurations/GeospatialConfig.asset: Enable Geospatial
-
-## Install Cesium
-
-Download the most recent version of the precompiled .tgz of Cesium for Unity (com.cesium.unity-1.6.4.tgz) from their GitHub Releases page: https://github.com/CesiumGS/cesium-unity/releases/
-
-Package Manager - "Add package from tarball"
-
-Project Settings... > XR Plug-in Management - ARCore Extensions panel. Enable the Geospatial Creator
-
-## Resources
-
-- Read about the new Geospatial Creator → https://goo.gle/3pdk2fE
-- Get started with Geospatial Creator in Unity → https://goo.gle/gc-unity
-- Visit our Geospatial Creator website → https://goo.gle/geospatialcreator   
-
-## Write Image to Gallery (Android)
-
-Set Write Permission to External (SDCard) in Player Settings. 
-https://github.com/yasirkula/UnityNativeGallery
-
-    // Save the screenshot to Gallery/Photos
-    string name = string.Format("{0}_{1}.png", Application.productName, System.DateTime.Now.ToString("yyyy-MM-dd-HHmmss"));
-    NativeGallery.Permission permission = NativeGallery.SaveImageToGallery(ss, Application.productName + " Captures", name + ".jpg");
-    Debug.Log("@@@ Permission result: " + permission );
-
-On Android, images are saved at DCIM/album/snap-trails Captures
-
-
-## Application.persistentDataPath
-
-Windows: C:\Users\tsotr\AppData\LocalLow\Manolis Tsotros\...
-
-iOS: /var/mobile/Containers/Data/Application/<guid>/Documents.
-
-Android: /storage/emulated/0/Android/data/<packagename>/files on most devices (some older phones might point to location on SD card if present)
-
 ## Troubleshoot
 
 - Google's troubleshooting page:
 
     https://github.com/google-ar/arcore-unity-extensions/issues
-    
-- https://developers.google.com/ar/geospatialcreator/unity/quickstart#troubleshooting
 
 - The app displays a black screen:
 
@@ -148,12 +55,6 @@ Android: /storage/emulated/0/Android/data/<packagename>/files on most devices (s
 
     1. Go to Project Settings > Graphics > Culling Settings > Camera-Relative Culling.
     2. Enable Shadows.
-
-- Incompatible API Key
-
-    Same API Key must exist in:
-        1. Project Settings... > XR Plug-in Management - ARCore Extensions - Android Authentication Strategy : API Key
-        2. Hierarchy - AR Geospatial Creator Origin
 
 - Nothing happens when I try to access the Gallery on Android
 
