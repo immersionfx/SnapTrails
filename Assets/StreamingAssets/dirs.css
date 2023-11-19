@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  height: 100%;
+  display: flex;
+}
+
+#map {
+  flex-basis: 0;
+  flex-grow: 4;
+  height: 100%;
+}
+
+#directions-panel {
+    position: absolute;
+    width: 265px;
+    height: 120px;
+    top: 55px;
+    left: 5px;
+    z-index: 5000;
+    background-color: white;
+    padding: 5px;
+    border: 1px solid rgb(66, 72, 79);
+    border-radius: 1px;
+}
