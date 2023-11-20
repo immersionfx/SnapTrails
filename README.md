@@ -26,36 +26,12 @@ And what's a journey without a little competition? Rate and be rated! Each of th
 
 Another button allows you to repost your photos and videos on your social media accounts in real time. It's like keeping a live travel blog and sharing your travel adventures with your friends.
 
-If you're ready to turn your travel shooting memories into an adventure of a lifetime, take a SnapTrail today and explore the world like never before. Embark on an unforgettable journey, one snapshot at a time!
+If you're ready to turn your travel-shooting memories into an adventure of a lifetime, take a SnapTrail today and explore the world like never before. Embark on an unforgettable journey, one snapshot at a time!
 
-## Troubleshoot
+## How to build
 
-- Google's troubleshooting page:
+- Need Unity 2021.3.22f1 
 
-    https://github.com/google-ar/arcore-unity-extensions/issues
-
-- The app displays a black screen:
-
-    Unity's Universal Rendering Pipeline (URP) is not configured for the AR Camera by default. To add the feature, search for "renderer" in your project. For each URP Renderer object, click the "Add Renderer Feature" button in the Inspector and add the AR Background Renderer Feature.
-
-- Why is my anchor moving?  
-
-    You may notice, especially when the app first launches, that the anchor may appear to slowly "drift". This occurs when the VPS session is still determining and refining the precise location of the camera. You may wish to render the object differently (or not at all) until the location accuracy reaches a certain threshold. To do so, you can query the ARCoreEarthManager.CameraGeospatialPose property to determine the accuracy for the current frame update.
-
-- Assembly 'Assets/External/ExternalDependencyManager/Editor/Google.IOSResolver.dll' will not be loaded due to errors
-
-    1. Just delete Assets/ExternalDependencyManager folder (or from package manager if you have added to packages)
-    2. Import the latest package(EDM4U) from EXTERNAL/external-dependency-manager-latest.unitypackage.
-
-- Shadow on character is flickering
-
-    Shadows might flicker if they’re far away from the camera. If shadows are closer to the camera than the world space origin, enable camera-relative culling. Unity uses the camera as the relative position for shadow calculations instead of the world space origin, which reduces flickering.
-
-    To enable camera-relative culling, follow these steps:
-
-    1. Go to Project Settings > Graphics > Culling Settings > Camera-Relative Culling.
-    2. Enable Shadows.
-
-- Nothing happens when I try to access the Gallery on Android
-
-    Make sure that you've set the Write Permission to "External (SDCard)" in Player Settings - Other Settings.
+- Google API Key must exist in:
+    1. Project Settings... > XR Plug-in Management - ARCore Extensions - Android Authentication Strategy : API Key
+    2. Hierarchy - AR Geospatial Creator Origin
